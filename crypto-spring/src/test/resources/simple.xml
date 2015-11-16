@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    <bean id="decrypter" class="org.zalando.crypto.ReverseCrypter"/>
+
+    <bean id="propertiesPlaceholder" class="org.zalando.crypto.spring.EncryptablePropertiesPlaceholderConfigurer">
+        <constructor-arg index="0" ref="decrypter"/>
+        <constructor-arg index="1" value="crypto:"/>
+        <property name="location" value="classpath:/withCrypto.properties"/>
+    </bean>
+</beans>
