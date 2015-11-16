@@ -16,6 +16,7 @@
 	<!-- LICENSE: https://github.com/google/keyczar/blob/master/java/LICENSE -->
 	<properties>
 		<keyczar.version>0.71g-090613</keyczar.version>
+		<maven-release-plugin.version>2.5.3</maven-release-plugin.version>
 	</properties>
 
 	<!-- NOTE: THIS WAS INSTALLED INTO LOCAL REPOSITORY -->
@@ -29,6 +30,18 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>${maven-release-plugin.version}</version>
+				<configuration>
+					<tagNameFormat>@{artifactId}-@{project.version}</tagNameFormat>
+					<mavenExecutorId>forked-path</mavenExecutorId>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<useReleaseProfile>false</useReleaseProfile>
+					<arguments>-Pcustom-release,maven</arguments>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
