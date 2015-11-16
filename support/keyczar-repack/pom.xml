@@ -8,7 +8,7 @@
 	</parent>
 	<groupId>org.zalando.stups</groupId>
 	<artifactId>keyczar-repack</artifactId>
-	<version>0.71g-090613-1</version>
+	<version>0.71g-090613-2-SNAPSHOT</version>
 
 	<!-- NOTE: THIS ARTIFACT IS NOT BUILD FROM SOURCE -->
 	<!-- ORIGINAL: https://github.com/google/keyczar/tree/master/java -->
@@ -80,6 +80,6 @@
 		<url>https://github.com/zalando/crypto.git</url>
 		<connection>scm:git:https://github.com/zalando/crypto.git</connection>
 		<developerConnection>scm:git:https://github.com/zalando/crypto.git</developerConnection>
-	  <tag>keyczar-repack-0.71g-090613-1</tag>
+	  <tag>HEAD</tag>
   </scm>
 </project>
