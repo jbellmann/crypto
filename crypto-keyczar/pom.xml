@@ -22,6 +22,8 @@
 			<groupId>org.keyczar</groupId>
 			<artifactId>keyczar</artifactId>
 			<version>${keyczar.version}</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/keyczar-0.71g-090613.jar</systemPath>
 		</dependency>
 		<!-- keyczar is bound to log4j -->
 		<dependency>
