@@ -17,6 +17,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.source>1.7</java.source>
 		<java.target>1.7</java.target>
+
+        <coveralls.dryRun>true</coveralls.dryRun>
+        <main.basedir>${basedir}</main.basedir>
 	</properties>
 
 	<modules>
@@ -26,4 +29,43 @@
 		<module>crypto-spring-boot</module>
 		<module>crypto-aws-kms</module>
 	</modules>
+
+    <profiles>
+        <profile>
+            <id>travis</id>
+            <properties>
+                <coveralls.dryRun>false</coveralls.dryRun>
+            </properties>
+        </profile>
+    </profiles>
+
+    <organization>
+        <name>Zalando SE</name>
+        <url>https://tech.zalando.com/</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>jbellman</id>
+            <name>Jörg Bellmann</name>
+            <organization>Zalando SE</organization>
+            <email>joerg.bellmann@zalando.de</email>
+        </developer>
+    </developers>
+
+
+    <scm>
+        <url>https://github.com/zalando-stups/fullstop.git</url>
+        <connection>scm:git:git@github.com:zalando-stups/fullstop.git</connection>
+        <developerConnection>scm:git:git@github.com:zalando-stups/fullstop.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
 </project>
